@@ -30,9 +30,11 @@
 	1. Body
 --------------------------------------------------------------------------*/
 
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+
 body {
 	color: #111;
-	font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Spoqa Han Sans","HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	line-height: 28px;
 	-webkit-font-smoothing: antialiased;
@@ -47,7 +49,7 @@ body {
 	}
 }
 
-
+.border-1 {border: 1px solid #efefef;}
 
 
 
@@ -581,7 +583,7 @@ b, strong { font-weight: bold; }
 	#header .logo-wrap { padding: 50px 0 50px 0; }
 
 	#header h1 {
-		font-size: 24px;
+		font-size: 60px;
 		line-height: 34px;
 		font-weight: bold;
 	}
@@ -826,6 +828,10 @@ b, strong { font-weight: bold; }
 		#works.single img { 
 			margin-bottom: 60px; 
 		}
+#works.single .mobile-view {text-align: left; width: 100%;}
+#works.single .mobile-view img { width: 48.611111111%; float: left; }
+#works.single .mobile-view img:first-child{margin-right: 10px;}
+
 
 		#works.single .box-info {
 			margin-bottom: 40px; 
