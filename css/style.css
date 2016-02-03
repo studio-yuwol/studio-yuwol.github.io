@@ -67,7 +67,6 @@ h5,
 h6 { font-weight: bold; }
 
 
-
 /* Links */
 a,
 a:visited {
@@ -584,7 +583,7 @@ b, strong { font-weight: bold; }
 
 	#header h1 {
 		font-size: 60px;
-		line-height: 34px;
+		line-height: 70px;
 		font-weight: bold;
 	}
 
