@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+
+    <title>대구교육대학교</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    
+    
+    
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+<!--    <link rel="stylesheet" href="css/style.css">-->
+    <link rel="stylesheet/less" href="css/style.less">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+
+
+    <!-- SlidesJS Required: -->
+
+</head>
+<body class="main_body">
+    <header id="header" class="c-green">
+        <a href="" class="icon-menu"><div></div></a>
+    </header>
+    <div class="container">
+        <div id="main">
+            <div class="row">
+                <div class="col-xs-7">
+                    <div class="box c-brown">대학 소개<span>About the University</span></div>
+                    <div class="box c-blue">대학생활 안내<span>Campus Life</span></div>
+                </div>
+                <div class="col-xs-5"><div class="box c-bluegray">대학광장<span>Community</span></div></div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-7"><div class="box c-tblue">입학안내<span>Admission Info</span></div></div>
+                <div class="col-xs-5"><div class="box c-red">학사정보<span>Bachelor of Information</span></div></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6"><div class="box c-yellow">식단안내</div></div>
+                <div class="col-xs-6"><div class="box c-dblue">모바일학생증<span>Mobile ID Card</span></div></div>
+            </div>
+            <div class="row quicklink">
+                <div class="col-xs-4"><div class="box">캠퍼스 안내</div></div>
+                <div class="col-xs-4"><div class="box">부서 검색</div></div>
+                <div class="col-xs-4"><div class="box">디지털도서관</div></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- SlidesJS Required: Link to jQuery -->
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <!-- End SlidesJS Required -->
+
+    <!-- SlidesJS Required: Initialize SlidesJS with a jQuery doc ready -->
+    <script>
+        function wrapWindowByMask() {
+            //화면의 높이와 너비를 구한다.
+            var maskHeight = $(document).height();
+            var maskWidth = $(window).width();
+
+            //마스크의 높이와 너비를 화면 것으로 만들어 전체 화면을 채운다.
+            $('#main_mask').css({
+                'width': maskWidth,
+                'height': maskHeight
+            });
+
+            //애니메이션 효과 - 일단 1초동안 까맣게 됐다가 80% 불투명도로 간다.
+            $('#main_mask').fadeIn('fast');
+            $('#main_mask').fadeTo("slow", 0.8);
+        }
+        $(function () {
+            $('#slides').slidesjs({
+                width: 320,
+                height: 185,
+                play: {
+                    active: true,
+                    auto: true,
+                    interval: 4000,
+                    swap: true
+                }
+            });
+        });
+        $(document).ready(function () {
+            $('.openID').click(function (e) {
+                e.preventDefault();
+                wrapWindowByMask();
+                $('.idPopup').fadeIn(500);
+                $('.idPopup').fadeTo("slow", 1);
+                var $layerPopupObj = $('.idPopup');
+                var left = ($(window).scrollLeft() + ($(window).width() - $layerPopupObj.width()) / 1);
+                var top = ($(window).scrollTop() + ($(window).height() - $layerPopupObj.height()) / 1);
+                $layerPopupObj.css({
+                    'left': left,
+                    'top': top,
+                    'position': 'absolute'
+                });
+                $('body').css('position', 'relative').append($layerPopupObj);
+            });
+            //검은 막을 눌렀을 때
+            $('#main_mask').click(function () {
+                $(this).hide();
+                $('.idPopup').hide();
+            });
+            $('.close').click(function () {
+                $('.idPopup, #main_mask').hide();
+            });
+
+        });
+    </script>
+    <!-- End SlidesJS Required -->
+
+    <footer id="footer" class="text-center">
+        <p>대구광역시 남구 중앙대로 219(대명동) 대구교육대학교<br><span>copyright ⓒ Deagu National University of Education. All Rights Reserved.</span>
+        </p>
+    </footer>
+</body>
+
+</html>

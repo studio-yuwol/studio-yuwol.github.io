@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+
+    <title>대구교육대학교</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!--    <link rel="stylesheet" href="css/style.css">-->
+    <link rel="stylesheet/less" href="css/style.less">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+
+
+    <!-- SlidesJS Required: -->
+
+</head>
+
+<body class="main_body">
+    <header id="header" class="c-brown">
+        <a href="" class="icon-back">
+            <div></div>
+        </a>
+        <a href="" class="icon-menu">
+            <div></div>
+        </a>
+        대학소개
+    </header>
+    <div class="container">
+        <div id="head-tab" class="brown">
+            <ul class="row">
+                <li class="col-xs-6 active"><a href="">e-총장실</a></li>
+                <li class="col-xs-6"><a href="">대학광장</a></li>
+                <li class="col-xs-6"><a href="">학교현황</a></li>
+                <li class="col-xs-6"><a href="">캠퍼스 안내</a></li>
+            </ul>
+        </div>
+        <div id="contents">
+            <div class="sub-tab">
+                <ul class="row text-center">
+                    <li class="col-xs-6"><a href="">총장인사말</a></li>
+                    <li class="col-xs-6 active"><a href="">총장동정</a></li>
+                </ul>
+            </div>
+            <div class="article galleryList">
+                <div class="col-xs-12 gallerySet">
+                    <ul>
+                        <li>
+                            <div class="galleryImg"></div>
+                            <h3>전국교원대학교 총장협의회 참석 <span class="new">N</span><span class="new">H</span></h3>
+                            <p class="date">2016. 02. 22</p>
+                        </li>
+                        <li>
+                            <div class="galleryImg"></div>
+                            <h3>전국교원대학교 총장협의회 참석 <span class="new">N</span><span class="new">H</span></h3>
+                            <p class="date">2016. 02. 22</p>
+                        </li>
+                        <li>
+                            <div class="galleryImg"></div>
+                            <h3>전국교원대학교 총장협의회 참석 <span class="new">N</span><span class="new">H</span></h3>
+                            <p class="date">2016. 02. 22</p>
+                        </li>
+                        <li>
+                            <div class="galleryImg"></div>
+                            <h3>전국교원대학교 총장협의회 참석 <span class="new">N</span><span class="new">H</span></h3>
+                            <p class="date">2016. 02. 22</p>
+                        </li>
+                        <li>
+                            <div class="galleryImg"></div>
+                            <h3>전국교원대학교 총장협의회 참석 <span class="new">N</span><span class="new">H</span></h3>
+                            <p class="date">2016. 02. 22</p>
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- SlidesJS Required: Link to jQuery -->
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <!-- End SlidesJS Required -->
+
+    <!-- SlidesJS Required: Link to jquery.slides.js -->
+    <script src="js/jquery.slides.min.js"></script>
+    <!-- End SlidesJS Required -->
+
+    <!-- SlidesJS Required: Initialize SlidesJS with a jQuery doc ready -->
+    <script>
+        function wrapWindowByMask() {
+            //화면의 높이와 너비를 구한다.
+            var maskHeight = $(document).height();
+            var maskWidth = $(window).width();
+
+            //마스크의 높이와 너비를 화면 것으로 만들어 전체 화면을 채운다.
+            $('#main_mask').css({
+                'width': maskWidth,
+                'height': maskHeight
+            });
+
+            //애니메이션 효과 - 일단 1초동안 까맣게 됐다가 80% 불투명도로 간다.
+            $('#main_mask').fadeIn('fast');
+            $('#main_mask').fadeTo("slow", 0.8);
+        }
+        $(function () {
+            $('#slides').slidesjs({
+                width: 320,
+                height: 185,
+                play: {
+                    active: true,
+                    auto: true,
+                    interval: 4000,
+                    swap: true
+                }
+            });
+        });
+        $(document).ready(function () {
+            $('.openID').click(function (e) {
+                e.preventDefault();
+                wrapWindowByMask();
+                $('.idPopup').fadeIn(500);
+                $('.idPopup').fadeTo("slow", 1);
+                var $layerPopupObj = $('.idPopup');
+                var left = ($(window).scrollLeft() + ($(window).width() - $layerPopupObj.width()) / 1);
+                var top = ($(window).scrollTop() + ($(window).height() - $layerPopupObj.height()) / 1);
+                $layerPopupObj.css({
+                    'left': left,
+                    'top': top,
+                    'position': 'absolute'
+                });
+                $('body').css('position', 'relative').append($layerPopupObj);
+            });
+            //검은 막을 눌렀을 때
+            $('#main_mask').click(function () {
+                $(this).hide();
+                $('.idPopup').hide();
+            });
+            $('.close').click(function () {
+                $('.idPopup, #main_mask').hide();
+            });
+
+        });
+    </script>
+    <!-- End SlidesJS Required -->
+
+    <footer id="footer" class="text-center">
+        <p>대구광역시 남구 중앙대로 219(대명동) 대구교육대학교
+            <br><span>copyright ⓒ Deagu National University of Education. All Rights Reserved.</span>
+        </p>
+    </footer>
+</body>
+
+</html>
