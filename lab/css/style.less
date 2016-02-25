@@ -67,6 +67,7 @@ li {
 }
 .container {
 	width: 100%;
+	z-index: 10;
 	overflow-x: hidden !important;
 }
 .text-center {
@@ -77,13 +78,12 @@ li {
 }
 
 .overlay {
-	position: fixed;
+	position: absolute;
 	width: 100%;
 	height: 100%;
 	top: 0;
 	left: 0;
 	bottom: 0;
-	right: 0;
 	z-index: 50;
 	background-color: black;
 	opacity: 0.8;
@@ -99,6 +99,7 @@ li {
 	transition: all 0.3s ease;
 }
 #lnb {
+	position: fixed;
 	width: 60%;
 	height: 100%;
 	position: absolute;
@@ -107,6 +108,7 @@ li {
 	right: -60%;
 	background-color: @logo-blue;
 	color: #fff;
+	overflow-y: auto;
 	a { color: #fff; }
 	div { padding: 0; } // 패딩 초기화
 	ul {

@@ -122,11 +122,13 @@ jQuery(function($){
 	
 	$('#lnbClose').on("click", function(){
 		$('#lnb').css({right:'-70%'})
+		$('.container').css({position:'relative'})
 		$('.overlay').toggle();
 	})
 	$('#lnbOpen').on("click", function(){
 		$('.overlay').toggle();
 		$('#lnb').css({right:0})
+		$('.container').css({position:'fixed'})
 	})
 
 	
