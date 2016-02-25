@@ -125,12 +125,13 @@ jQuery(function($){
 	$('#lnbClose').on("click", function(){
 		$('#lnb').css({right:'-80%'})
 		$('.container').css({position:'relative'})
+		$('.container').removeClass('position')
 		$('.overlay').toggle();
 	})
 	$('#lnbOpen').on("click", function(){
 		$('.overlay').toggle();
 		$('#lnb').css({right:0})
-		$('.container').css({position:'fixed'})
+		$('.container').css({position:'fixed', top:0})
 	})
 
 	
