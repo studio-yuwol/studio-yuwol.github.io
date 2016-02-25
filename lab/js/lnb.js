@@ -121,7 +121,7 @@ jQuery(function($){
 
 	
 	$('#lnbClose').on("click", function(){
-		$('#lnb').css({right:'-70%'})
+		$('#lnb').css({right:'-80%'})
 		$('.container').css({position:'relative'})
 		$('.overlay').toggle();
 	})
