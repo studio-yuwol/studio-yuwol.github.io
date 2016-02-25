@@ -84,6 +84,39 @@ li {
 	text-align: right;
 }
 
+
+.icon-bg (@url:url(../images/svg/graduation-cap.svg)){
+	width: 100%; height: 100%; background: @url no-repeat; background-position: right bottom;
+}
+.ico-01 { .icon-bg(url(../images/svg/graduation-cap.svg)) }
+.ico-02 { .icon-bg(url(../images/svg/message-1-smile.svg)) }
+.ico-03 { .icon-bg(url(../images/svg/university.svg)) }
+.ico-04 { .icon-bg(url(../images/svg/rolodex.svg)) }
+.ico-05 { .icon-bg(url(../images/svg/rolodex.svg)) }
+.ico-06 { .icon-bg(url(../images/svg/spoon.svg)) }
+.ico-07 { .icon-bg(url(../images/svg/rolodex.svg)) }
+.ico-08 { .icon-bg(url(../images/svg/map-location-1.svg)) }
+.ico-09 { .icon-bg(url(../images/svg/magnifier.svg)) }
+.ico-10 { .icon-bg(url(../images/svg/office-archive.svg)) }
+//
+//.ico-01 { width: 100%; height: 100%; background: url(../images/svg/graduation-cap.svg) no-repeat; background-position: right bottom; }
+//.ico-02 { width: 100%; height: 100%; background: url(../images/svg/message-1-smile.svg) no-repeat; background-position: right bottom; }
+//.ico-03 { width: 100%; height: 100%; background: url(../images/svg/university.svg) no-repeat; background-position: right bottom; }
+//.ico-04 { width: 100%; height: 100%; background: url(../images/svg/rolodex.svg) no-repeat; background-position: right bottom; }
+//.ico-05 { width: 100%; height: 100%; background: url(../images/svg/rolodex.svg) no-repeat; background-position: right bottom; }
+//.ico-06 { width: 100%; height: 100%; background: url(../images/svg/spoon.svg) no-repeat; background-position: right bottom; }
+//.ico-07 { width: 100%; height: 100%; background: url(../images/svg/rolodex.svg) no-repeat; 	background-position: right bottom; }
+//.ico-08 { width: 100%; height: 100%; background: url(../images/svg/map-location-1.svg) no-repeat; 	background-position: right bottom; }
+//.ico-09 { width: 100%; height: 100%; background: url(../images/svg/magnifier.svg) no-repeat; 	background-position: right bottom; }
+//.ico-10 { width: 100%; height: 100%; background: url(../images/svg/office-archive.svg) no-repeat; 	background-position: right bottom; }
+
+
+
+
+
+
+
+
 .overlay {
 
 	position: fixed;
@@ -192,8 +225,8 @@ li {
 	.logo {
 		img {
 			display: inline-block;
-			height: 30px;
-			margin-top: -4px;
+			height: 21px;
+//			margin-top: -4px;
 		}
 		text-align: left;
 		height: 50px;
@@ -280,9 +313,6 @@ i {
 			}
 		}
 		.row.quicklink {
-			div {
-				&:nth-child(1) {background-image: url(../images/svg/magnifier.svg)};
-			}
 			.box {
 				background-color: #b2b2b2;
 				font-size: 13px;
