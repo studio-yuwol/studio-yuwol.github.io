@@ -98,7 +98,13 @@ li {
 .ico-08 { .icon-bg(url(../images/svg/map-location-1.svg)) }
 .ico-09 { .icon-bg(url(../images/svg/magnifier.svg)) }
 .ico-10 { .icon-bg(url(../images/svg/office-archive.svg)) }
-//
+
+
+.icon-lnb-01 { height: 32px; background-image: url(../images/svg/map-location-1.svg); background-repeat: no-repeat; background-position: center top; background-size: 70% 70%;}
+.icon-lnb-02 {height: 32px; background-image: url(../images/svg/magnifier.svg); background-repeat: no-repeat; background-position: center top; background-size: 70% 70%;}
+.icon-lnb-03 {height: 32px; background-image: url(../images/svg/office-archive.svg); background-repeat: no-repeat; background-position: center top; background-size: 70% 70%;}
+
+
 //.ico-01 { width: 100%; height: 100%; background: url(../images/svg/graduation-cap.svg) no-repeat; background-position: right bottom; }
 //.ico-02 { width: 100%; height: 100%; background: url(../images/svg/message-1-smile.svg) no-repeat; background-position: right bottom; }
 //.ico-03 { width: 100%; height: 100%; background: url(../images/svg/university.svg) no-repeat; background-position: right bottom; }
@@ -204,10 +210,11 @@ li {
 		}
 	}
 	.quickmenu {
-		div {
+		>div {
 			height: 76px; 
 			text-align: center; 
 			background-color: lighten(@logo-blue, 5%);
+			padding-top:15px;
 		}
 	}
 	.btn-logout {}
