@@ -57,6 +57,11 @@ body {
 	font-size: 12px;
 	color: #222;
 	overflow-x: hidden;
+	a {
+		&:hover, {text-decoration: none;}
+		&:visited, {text-decoration: none;}
+		text-decoration: none;
+	}
 }
 ul,
 ol,
@@ -129,6 +134,12 @@ li {
 		color: #fff;
 		padding: 0;
 		.lnb-status {
+			.logo { 
+				height: 50px; 
+				background: url(../images/svg/symbol_w.svg) no-repeat center center;
+				background-size: 32px 32px;
+			
+			}
 			.login{padding: 0 15px;}
 		}
 		.menu-close {
@@ -148,10 +159,7 @@ li {
 	.lnb-list {
 		li {
 			&.active {
-				a {
-					background: darken(@logo-blue, 8%);
-					border-bottom: 1px solid darken(@logo-blue, 12%)
-				}
+				a { background: darken(@logo-blue, 8%); border-bottom: 1px solid darken(@logo-blue, 12%) }
 			}
 			a {
 				display: block;
@@ -169,6 +177,7 @@ li {
 			background-color: lighten(@logo-blue, 5%);
 		}
 	}
+	.btn-logout {}
 }
 #header {
 	
@@ -180,6 +189,16 @@ li {
 	font-weight: bold;
 	color: #fff;
 	z-index: 100;
+	.logo {
+		img {
+			display: inline-block;
+			height: 30px;
+			margin-top: -4px;
+		}
+		text-align: left;
+		height: 50px;
+		padding: 0 15px;
+	}
 	.icon-back,
 	.icon-menu {
 		display: inline-block;
