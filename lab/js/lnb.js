@@ -4,14 +4,14 @@ jQuery(function($){
 	var dept1_link = null;
 	
 	var menuName = [
-		{'name':'대학소개','link':'#','sdp':[
-			{'name':'e-총장실','link':'#'},
-			{'name':'대학 안내','link':'#'},
-			{'name':'대학 조직','link':'#'},
-			{'name':'캠퍼스 안내','link':'#'}
+		{'name':'대학소개','link':'','sdp':[
+			{'name':'e-총장실','link':'01_sub01-1.html'},
+			{'name':'대학 안내','link':'01_sub02-1.html'},
+			{'name':'대학 조직','link':'01_sub03-1.html'},
+			{'name':'캠퍼스 안내','link':'01_sub04-3.html'}
 		]},
-		{'name':'대학광장','link':'#','sdp':[
-			{'name':'공지사항','link':'#'},
+		{'name':'대학광장','link':'','sdp':[
+			{'name':'공지사항','link':'02_sub01.html'},
 			{'name':'학사안내','link':'#'},
 			{'name':'장학정보','link':'#'},
 			{'name':'총장 신문고','link':'#'}
@@ -52,10 +52,10 @@ jQuery(function($){
 
 		//		console.log(menuName[i].sdp.length)
 
-		$('ul.lnb-list').append('<li id="m'+ i +'"><a href="'+dept1_link+'"><span>'+ dept1_name +'</span><i class="fa fa-angle-down floatR"></i></a><ul style="display:none;"></ul></li>')
+		$('ul.lnb-list').append('<li id="m'+ i +'"><a><span>'+ dept1_name +'</span><i class="fa fa-angle-down floatR"></i></a><ul style="display:none;"></ul></li>')
 
 		for	(var j = 0 ; j < menuName[i].sdp.length; j++) {
-			$('ul.lnb-list #m'+i+ ' ul').append ('<li><a href="#"><span>'+ menuName[i].sdp[j].name +'</span></a></li>')
+			$('ul.lnb-list #m'+i+ ' ul').append ('<li><a href="'+menuName[i].sdp[j].link+'"><span>'+ menuName[i].sdp[j].name +'</span></a></li>')
 		}
 	}
 	
