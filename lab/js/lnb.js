@@ -93,7 +93,7 @@ jQuery(function($){
 		} else {
 			t.next('ul').slideUp(100);
 		}
-
+		
 		if (t.parent('li').hasClass('active')){
 			t.parent('li').removeClass('active');
 		} else {
