@@ -52,7 +52,7 @@ jQuery(function($){
 
 		//		console.log(menuName[i].sdp.length)
 
-		$('ul.lnb-list').append('<li id="m'+ i +'"><a href="'+dept1_link+'"><span>'+ dept1_name +'</span><i class="fa fa-angle-up"></i></a><ul style="display:none;"></ul></li>')
+		$('ul.lnb-list').append('<li id="m'+ i +'"><a href="'+dept1_link+'"><span>'+ dept1_name +'</span><i class="fa fa-angle-down floatR"></i></a><ul style="display:none;"></ul></li>')
 
 		for	(var j = 0 ; j < menuName[i].sdp.length; j++) {
 			$('ul.lnb-list #m'+i+ ' ul').append ('<li><a href="#"><span>'+ menuName[i].sdp[j].name +'</span></a></li>')
@@ -79,27 +79,29 @@ jQuery(function($){
 	
 	function menu_vToggle(event){
 		var t = $(this);
-		console.log(t)
 		if (this == lastEvent) return false;
 		lastEvent = this;
-		setTimeout(function(){ lastEvent=null }, 200);
-
+		setTimeout(function(){ lastEvent=null }, 300);
 		if (t.next('ul').is(':hidden')) {
-			sItem.find('>ul').slideUp(100);
-			t.next('ul').slideDown(100);
-			//t.find('i').attr('class', 'fa fa-angle-down')
+			sItem.find('>ul').slideUp(200);
+			t.next('ul').slideDown(200);
+			t.find('i').attr('class', 'fa fa-angle-up floatR')
 		} else if(!t.next('ul').length) {
-			sItem.find('>ul').slideUp(100);
+			sItem.find('>ul').slideUp(200);
 		} else {
-			t.next('ul').slideUp(100);
+			t.next('ul').slideUp(200); //같은거 다시 클릭
+			t.find('i').attr('class', 'fa fa-angle-down floatR')
 		}
 		
 		if (t.parent('li').hasClass('active')){
+			//console.log("여기")
 			t.parent('li').removeClass('active');
 		} else {
+			//console.log("여기")
 			sItem.removeClass('active');
+			
 			t.parent('li').addClass('active');
-			console.log(t.find('span'))
+			//console.log(t.find('span'))
 			
 		}
 	}

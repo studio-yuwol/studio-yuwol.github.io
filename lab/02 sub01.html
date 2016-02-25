@@ -19,23 +19,51 @@
     <!--    <link rel="stylesheet" href="css/style.css">-->
     <link rel="stylesheet/less" href="css/style.less">
     <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
-
+	<script src="js/lnb.js"></script>
 
     <!-- SlidesJS Required: -->
 
 </head>
 
 <body class="main_body">
-    <header id="header" class="c-bluegray">
-        <a href="" class="icon-back">
-            <div></div>
-        </a>
-        <a href="" class="icon-menu">
-            <div></div>
-        </a>
-        대학소개
-    </header>
+	<nav id="lnb" class="lnb-ani">
+		<div class="col-xs-12 lnb-box">
+			<div class="lnb-info">
+				<div class="lnb-status col-xs-10">
+					<div class="logo floatL"> </div>
+					<div class="info text-center floatL">
+						<div class="login ">로그인하기</div>
+						<div class="logout" style="display:none;">김정현 ( 윤리교육과 )</div>
+					</div>
+				</div>
+
+				<div class="menu-close col-xs-2">
+					<button id="lnbClose" class="btn-close"></button>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<div id="menu_v" class="menu_v">
+				<ul class="lnb-list"></ul>
+			</div>
+
+			<div class="quickmenu">
+				<div class="col-xs-4"><div class="icon-lnb-01"></div>캠퍼스안내</div>
+				<div class="col-xs-4"><div class="icon-lnb-02"></div>부서 검색</div>
+				<div class="col-xs-4"><div class="icon-lnb-03"></div>디지털도서관</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="btn-logout text-center">로그아웃</div>
+		</div>
+	</nav>
+    
     <div class="container">
+		<header id="header" class="c-bluegray">
+			<a href="" class="icon-back">
+				<div></div>
+			</a>
+			<div href="" id="lnbOpen" class="icon-menu"><div></div></div>
+			대학소개
+		</header>
         <div id="head-tab" class="bluegray">
             <ul class="row">
                 <li class="col-xs-6 active"><a href="">공지사항</a></li>
