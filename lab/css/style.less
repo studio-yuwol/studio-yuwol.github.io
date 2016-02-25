@@ -56,6 +56,7 @@ body {
 	width: 100%;
 	font-size: 12px;
 	color: #222;
+	overflow-x: hidden;
 }
 ul,
 ol,
@@ -66,6 +67,7 @@ li {
 }
 .container {
 	width: 100%;
+//	overflow: hidden !important;
 }
 .text-center {
 	text-align: center;
@@ -73,12 +75,36 @@ li {
 .text-right {
 	text-align: right;
 }
+
+.overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 50;
+	background-color: black;
+	opacity: 0.8;
+	display: none;
+}
+.menu-open {
+	right: 0;
+}
+.lnb-ani,
+.lnb-ani-push {
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
 #lnb {
+	width: 30%;
+	height: 100%;
 	position: absolute;
 	top: 0;
 	z-index: 100;
-	left: 100px;
-	width: 100%;
+	right: -30%;
+	background-color: @logo-blue;
 	color: #fff;
 	a { color: #fff; }
 	div { padding: 0; } // 패딩 초기화
@@ -97,6 +123,9 @@ li {
 		font-size: 12px;
 		color: #fff;
 		padding: 0;
+		.lnb-status {
+			.login{padding: 0 15px;}
+		}
 		.menu-close {
 			text-align: right;
 			padding: 0;
@@ -104,14 +133,28 @@ li {
 			.btn-close {
 				width: 50px;
 				height: 50px;
+				background: url(../images/svg/close.svg) no-repeat center center;
+				background-size: 50%;
+				border: 0;
+				fill: #fff;
 			}
 		}
 	}
 	.lnb-list {
 		li {
-			font-size: 14px; 
-			padding: 15px;
-			border-bottom: 1px solid lighten(@logo-blue, 4%);
+			&.active {
+				a {
+					background: darken(@logo-blue, 8%);
+					border-bottom: 1px solid darken(@logo-blue, 12%)
+				}
+			}
+			a {
+				display: block;
+				font-size: 14px; 
+				padding: 15px;	
+				border-bottom: 1px solid lighten(@logo-blue, 3%);
+			}
+			
 		}
 	}
 	.quickmenu {
@@ -211,6 +254,9 @@ i {
 			}
 		}
 		.row.quicklink {
+			div {
+				&:nth-child(1) {background-image: url(../images/svg/magnifier.svg)};
+			}
 			.box {
 				background-color: #b2b2b2;
 				font-size: 13px;
