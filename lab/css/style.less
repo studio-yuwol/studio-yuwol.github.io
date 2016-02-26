@@ -18,6 +18,7 @@
 	padding-right: 5px;
 	padding-left: 5px;
 }
+
 @logo-blue : #008dd0;
 @red : #F74D4D;
 @brown :#A5937C;
@@ -30,30 +31,16 @@
 @box-height : 103px;
 @quick-height : @box-height -20px;
 //@deepgreen : darken(@green, 15%);
-.c-brown {
-	background-color: @brown;
-}
-.c-green {
-	background-color: @green;
-}
-.c-yellow {
-	background-color: @yellow
-}
-.c-blue {
-	background-color: @blue;
-}
-.c-tblue {
-	background-color: @tblue
-}
-.c-red {
-	background-color: @red
-}
-.c-dblue {
-	background-color: @dblue
-}
-.c-bluegray {
-	background-color: @bluegray
-}
+
+.c-brown 	{ background-color: @brown; }
+.c-green 	{ background-color: @green; }
+.c-yellow 	{ background-color: @yellow; }
+.c-blue 	{ background-color: @blue; }
+.c-tblue 	{ background-color: @tblue; }
+.c-red 		{ background-color: @red; }
+.c-dblue 	{ background-color: @dblue; }
+.c-bluegray { background-color: @bluegray; }
+
 body {
 	width: 100%;
 	font-size: 12px;
@@ -97,7 +84,9 @@ ul, ol
 
 
 
-
+.line-border (@out : border){
+	@out: 1px solid #E3E3E3;
+}
 .icon-bg (@url:url(../images/svg/graduation-cap.svg)){
 	width: 100%; height: 100%; background: @url no-repeat; background-position: right bottom;
 }
@@ -398,7 +387,25 @@ i {
 			border-radius: 3px;
 			-webkit-border-radius: 3px;
 		}
-		//        .article {padding:15px 0;}
+		.article {
+			&.row {padding: 0 15px;}
+			table {
+				width: 100%; text-align: center;
+				
+				th {
+					text-align: center;
+					border-top: 1px solid @logo-blue;
+					border-bottom: 1px solid #E3E3E3;
+					padding: 5px 8px;
+					background-color: #f8f8f8;
+				}
+				td {
+					border-bottom: 1px solid #E3E3E3;
+					padding: 5px 8px;
+				}
+				.email {width: 16px; height: 12px; background-image: url(../images/icon_email.gif);}
+			}
+		}
 		.galleryList {
 			.gallerySet {
 				padding: 0;
@@ -429,6 +436,44 @@ i {
 					color: #fff;
 				}
 				
+				.date {
+					color: #999;
+					font-size: 11px;
+					margin: 0;
+				}
+			}
+			.gallerySet-6 {
+				&:first-child {padding-right: 5px;}
+				&:last-child {padding-left: 5px;}
+				
+				li {
+					&:first-child {
+						padding-top: 0;
+					}
+					padding: 15px 0;
+					border-bottom: 1px solid #E3E3E3;
+				}
+				.galleryImg {
+					width: 100%;
+					height: auto;
+					background-color: #e8e8e8;
+				}
+				h3 {
+					font-size: 14px;
+					color: #444;
+					margin: 10px 0 5px;
+					text-align: center;
+				}
+				span {
+					&:first-child {
+						margin-right: 4px;
+					}
+					padding: 2px 4px;
+					font-size: 7px;
+					line-height: 14px;
+					color: #fff;
+				}
+
 				.date {
 					color: #999;
 					font-size: 11px;
@@ -553,7 +598,7 @@ i {
 
 .searchWarp {
 	position: relative;
-	padding: 0 15px 15px;
+	padding: 15px;
 	.search_area {
 		width: 100%;
 		overflow: hidden;
