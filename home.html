@@ -3,7 +3,7 @@
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!-->
-<html lang="ko">
+<html lang="ko" ng-app="yuwol">
 <!--<![endif]-->
 
 <head>
@@ -48,20 +48,28 @@
 	<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 </head>
 
-<body>
+<body ng-controller="indexCtrl">
 	<header id="header">
 		<div class="mobile-navigation"></div>
 		<div class="navigation">
 			<nav class="container">
 				<div class="logo"></div>
 				<ul class="nav-list">
-					<li><a href="">about</a></li>
-					<li><a href="">work</a></li>
-					<li><a href="">blog</a></li>
+					<li><a href="#about">about</a></li>
+					<li><a href="#work">work</a></li>
+					<li><a href="#blog">blog</a></li>
 				</ul>
 			</nav>
 		</div>
 	</header>
+	
+	<section id="main">
+		<div class="container">
+			<div class="clear-fix" ng-view></div>
+		</div>
+	</section>
+	
+	
 	<!-- Footer
 		================================================== -->
 	<footer id="footer">
@@ -89,7 +97,8 @@
 	<script src="js/modernizr.js"></script>
 <!--	<script src="js/less-1.4.0.min.js"></script>-->
 <!--<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.6.1/less.min.js"></script>-->
-<script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/2.6.1/less.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/2.6.1/less.min.js"></script>
+	<script src="controllers/yuwol.js"></script>
 	<!-- End Document
 ================================================== -->
 </body>
